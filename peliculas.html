@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Películas - AnimeLife</title>
+  <link rel="icon" href="img/logo_Mai.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/36dd0ead2c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="peliculas.css">
+</head>
+<body class="bg-dark text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo_Mai.png" alt="Logo AnimeLife" width="40" height="40" class="me-2 rounded-circle">
+        <span class="text-warning">AnimeLife</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="genero.html"><i class="fa-solid fa-list me-2"></i>Géneros</a></li>
+          <li class="nav-item"><a class="nav-link" href="populares.html"><i class="fa-solid fa-fire me-2"></i>Populares</a></li>
+          <li class="nav-item"><a class="nav-link active" href="peliculas.html"><i class="fa-solid fa-film me-2"></i>Películas</a></li>
+          <li class="nav-item"><a class="nav-link" href="mangas.html"><i class="fa-solid fa-book me-2"></i>Mangas</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html"><i class="fa-solid fa-newspaper me-2"></i>Noticias</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar película..." aria-label="Buscar">
+          <button class="btn btn-outline-warning" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-peliculas">
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4 text-gradient">
+              <i class="fa-solid fa-film me-3"></i>Películas de Anime
+            </h1>
+            <p class="lead mb-4">Descubre las mejores películas de anime en alta definición. Desde clásicos atemporales hasta los últimos estrenos.</p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <i class="fa-solid fa-video"></i>
+                <span>500+ Películas</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>HD & 4K</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Mejor Calidad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Película Destacada -->
+  <section class="featured-movie py-5">
+    <div class="container">
+      <div class="featured-card">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <div class="featured-poster">
+              <img src="img/pelicula_1.jpg" alt="Película Destacada">
+              <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="quality-badge">4K</div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="featured-content">
+              <div class="featured-badge">
+                <i class="fa-solid fa-crown"></i>
+                <span>Película del Mes</span>
+              </div>
+              <h2>Your Name (Kimi no Na wa)</h2>
+              <div class="movie-meta">
+                <span class="rating"><i class="fa-solid fa-star"></i> 9.5</span>
+                <span class="duration"><i class="fa-solid fa-clock"></i> 106 min</span>
+                <span class="year"><i class="fa-solid fa-calendar"></i> 2016</span>
+                <span class="studio"><i class="fa-solid fa-building"></i> CoMix Wave Films</span>
+              </div>
+              <p class="synopsis">
+                Dos adolescentes comparten un profundo y mágico vínculo tras descubrir que están intercambiando cuerpos mientras sueñan. Una historia emotiva sobre el destino, el amor y la conexión humana.
+              </p>
+              <div class="genres">
+                <span class="genre-tag">Romance</span>
+                <span class="genre-tag">Drama</span>
+                <span class="genre-tag">Sobrenatural</span>
+              </div>
+              <div class="movie-actions">
+                <button class="btn-watch-now">
+                  <i class="fa-solid fa-play"></i> Ver Ahora
+                </button>
+                <button class="btn-trailer">
+                  <i class="fa-solid fa-video"></i> Tráiler
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="filters-section py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">
+              <i class="fa-solid fa-globe"></i> Todas
+            </button>
+            <button class="filter-btn" data-filter="latest">
+              <i class="fa-solid fa-clock"></i> Más Recientes
+            </button>
+            <button class="filter-btn" data-filter="popular">
+              <i class="fa-solid fa-fire"></i> Populares
+            </button>
+            <button class="filter-btn" data-filter="classic">
+              <i class="fa-solid fa-gem"></i> Clásicas
+            </button>
+            <button class="filter-btn" data-filter="studio-ghibli">
+              <i class="fa-solid fa-leaf"></i> Studio Ghibli
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="sort-controls">
+            <select class="form-select" id="sortSelect">
+              <option value="popularity">Más Popular</option>
+              <option value="rating">Mejor Valorada</option>
+              <option value="year">Más Reciente</option>
+              <option value="alphabetical">A-Z</option>
+              <option value="duration">Duración</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de Películas -->
+  <section class="movies-grid py-5">
+    <div class="container">
+      <div class="row g-4" id="moviesGrid">
+        
+        <!-- Película 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="popular" data-rating="9.2" data-year="2019">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_2.jpg" alt="Weathering With You">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 9.2
+                  </div>
+                  <div class="duration">112 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">HD</div>
+            </div>
+            <div class="movie-content">
+              <h3>Weathering With You</h3>
+              <p class="year">2019 • Romance, Drama</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="classic" data-rating="9.8" data-year="1988">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_3.jpg" alt="Akira">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 9.8
+                  </div>
+                  <div class="duration">124 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">4K</div>
+            </div>
+            <div class="movie-content">
+              <h3>Akira</h3>
+              <p class="year">1988 • Acción, Sci-Fi</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="studio-ghibli" data-rating="9.4" data-year="2001">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_4.jpg" alt="Spirited Away">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 9.4
+                  </div>
+                  <div class="duration">125 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">HD</div>
+            </div>
+            <div class="movie-content">
+              <h3>Spirited Away</h3>
+              <p class="year">2001 • Aventura, Familia</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="latest" data-rating="8.9" data-year="2024">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_5.jpg" alt="Demon Slayer Movie">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 8.9
+                  </div>
+                  <div class="duration">117 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">4K</div>
+              <div class="new-badge">NUEVO</div>
+            </div>
+            <div class="movie-content">
+              <h3>Demon Slayer: Infinity Castle</h3>
+              <p class="year">2024 • Acción, Sobrenatural</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 5 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="popular" data-rating="9.1" data-year="2020">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_6.jpg" alt="Jujutsu Kaisen Movie">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 9.1
+                  </div>
+                  <div class="duration">105 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">HD</div>
+            </div>
+            <div class="movie-content">
+              <h3>Jujutsu Kaisen 0</h3>
+              <p class="year">2020 • Acción, Escolar</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 6 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="studio-ghibli" data-rating="9.0" data-year="1997">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_7.jpg" alt="Princess Mononoke">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 9.0
+                  </div>
+                  <div class="duration">134 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">HD</div>
+            </div>
+            <div class="movie-content">
+              <h3>Princess Mononoke</h3>
+              <p class="year">1997 • Aventura, Drama</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 7 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="latest" data-rating="8.7" data-year="2023">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_8.jpg" alt="One Piece Film Red">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 8.7
+                  </div>
+                  <div class="duration">115 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">4K</div>
+            </div>
+            <div class="movie-content">
+              <h3>One Piece Film: Red</h3>
+              <p class="year">2023 • Aventura, Musical</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Película 8 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-item" data-category="classic" data-rating="9.3" data-year="1995">
+          <div class="movie-card">
+            <div class="movie-poster">
+              <img src="img/pelicula_9.jpg" alt="Ghost in the Shell">
+              <div class="movie-overlay">
+                <div class="play-overlay">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="movie-info">
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i> 9.3
+                  </div>
+                  <div class="duration">83 min</div>
+                </div>
+              </div>
+              <div class="quality-badge">HD</div>
+            </div>
+            <div class="movie-content">
+              <h3>Ghost in the Shell</h3>
+              <p class="year">1995 • Acción, Cyberpunk</p>
+              <div class="movie-actions">
+                <button class="btn-watch">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="btn-favorite">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-info">
+                  <i class="fa-solid fa-info-circle"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Paginación -->
+      <div class="pagination-wrapper mt-5">
+        <nav aria-label="Navegación de páginas">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">
+                <i class="fa-solid fa-chevron-left"></i>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section class="stats-section py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-film stat-icon"></i>
+            <h3 class="stat-number" data-target="500">0</h3>
+            <p>Películas Disponibles</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-eye stat-icon"></i>
+            <h3 class="stat-number" data-target="25000000">0</h3>
+            <p>Visualizaciones</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-clock stat-icon"></i>
+            <h3 class="stat-number" data-target="50000">0</h3>
+            <p>Horas de Contenido</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-star stat-icon"></i>
+            <h3 class="stat-number" data-target="97">0</h3>
+            <p>% Satisfacción</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+  <footer class="bg-dark text-white mt-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <img src="img/logo_Mai.png" alt="Logo AnimeLife" width="60" class="mb-2">
+          <h5 class="text-warning">AnimeLife</h5>
+          <p>Tu sitio ideal para disfrutar de animes en línea, gratis y en HD. Nuevos episodios cada día.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Categorías Populares</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Acción</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Aventura</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Comedia</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Romance</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Enlaces Útiles</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Directorio</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Calendario</a></li>
+            <li><a href="#" class="text-white text-decoration-none">En Emisión</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Ingresar</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Ubicación</h5>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <iframe src="https://www.google.com/maps/embed?pb=!4v1753224019586!6m8!1m7!1sWqQNXTXyVue-qroN9Ye08w!2m2!1d35.74212737153465!2d139.6067255449599!3f291.13373262413637!4f12.537718789550908!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <small>🌸 Gracias por unirte a la familia de Anime Life 🌸
+          En este rincón digital, donde la imaginación y el arte japonés se encuentran, cada visitante es más que un
+          espectador: es parte de una comunidad vibrante. En Kitsune celebramos cada historia, cada emoción, y cada
+          escena que nos hace soñar. Ya sea que estés buscando revivir grandes momentos o descubrir nuevas aventuras,
+          este es tu refugio, tu hogar entre mundos animados.
+          
+          
+          <br>© 2025 AnimeLife. Todos los derechos reservados. Ningún
+          video se encuentra alojado en nuestros
+          servidores.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

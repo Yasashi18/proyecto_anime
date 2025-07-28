@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AnimeLife - Tu portal de anime favorito</title>
+  <link rel="icon" href="img/logo_Mai.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/36dd0ead2c.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body class="bg-dark text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center logo_pagina" href="index.html">
+        <img src="img/logo_Mai.png" alt="Logo AnimeLife" width="40" height="40" class="me-2 rounded-circle">
+        <span class="text-warning">AnimeLife</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="genero.html"><i class="fa-solid fa-list me-2"></i>Géneros</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="populares.html"><i
+                class="fa-solid fa-fire me-2"></i>Populares</a></li>
+          <li class="nav-item"><a class="nav-link" href="peliculas.html"><i
+                class="fa-solid fa-film me-2"></i>Películas</a></li>
+          <li class="nav-item"><a class="nav-link" href="mangas.html"><i class="fa-solid fa-book me-2"></i>Mangas</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html"><i
+                class="fa-solid fa-newspaper me-2"></i>Noticias</a></li>
+        </ul>
+        <div class="d-flex align-items-center">
+          <form class="d-flex me-3" role="search">
+            <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar anime..."
+              aria-label="Buscar">
+            <button class="btn btn-outline-warning" type="submit">
+              <i class="fa-solid fa-search"></i>
+            </button>
+          </form>
+          <button class="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin">
+            <i class="fa-solid fa-user me-1"></i> Ingresar
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Offcanvas -->
+  <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasLogin"
+    aria-labelledby="offcanvasLoginLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title text-warning" id="offcanvasLoginLabel">
+        <i class="fa-solid fa-user-circle me-2"></i>Ingresar a AnimeLife
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="text-center mb-4">
+        <img src="img/logo_Mai.png" alt="Logo AnimeLife" class="rounded-circle mb-3" style="width: 80px; height: 80px;">
+        <h6 class="text-warning">Bienvenido de vuelta</h6>
+      </div>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">
+            <i class="fa-solid fa-envelope me-2"></i>Correo electrónico
+          </label>
+          <input type="email" class="form-control bg-secondary border-0 text-white" id="loginEmail"
+            placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">
+            <i class="fa-solid fa-lock me-2"></i>Contraseña
+          </label>
+          <input type="password" class="form-control bg-secondary border-0 text-white" id="loginPassword"
+            placeholder="Tu contraseña" required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">
+            Recordarme
+          </label>
+        </div>
+        <button type="submit" class="btn btn-warning w-100 mb-3">
+          <i class="fa-solid fa-sign-in-alt me-2"></i>Ingresar
+        </button>
+      </form>
+      <div class="text-center">
+        <a href="#" class="text-warning text-decoration-none">¿Olvidaste tu contraseña?</a>
+      </div>
+      <hr class="border-secondary">
+      <div class="text-center">
+        <p class="mb-2">¿No tienes una cuenta?</p>
+        <a href="registro.html" class="btn btn-outline-warning w-100">
+          <i class="fa-solid fa-user-plus me-2"></i>Crear cuenta
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/portada_1.jpg" class="d-block w-100" alt="Anime 1">
+        <div class="carousel-caption">
+          <div class="hero-content">
+            <h1 class="display-4 fw-bold mb-4 text-gradient">
+              <i class="fa-solid fa-play-circle me-3"></i>Bienvenido a AnimeLife
+            </h1>
+            <p class="lead mb-4">Descubre los mejores animes actualizados al día en alta definición.</p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <i class="fa-solid fa-video"></i>
+                <span>10,000+ Episodios</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Actualizado Diario</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-star"></i>
+                <span>HD & 4K</span>
+              </div>
+            </div>
+            <div class="hero-actions mt-4">
+              <button class="btn btn-warning btn-lg me-3">
+                <i class="fa-solid fa-play me-2"></i>Ver Ahora
+              </button>
+              <button class="btn btn-outline-light btn-lg">
+                <i class="fa-solid fa-info-circle me-2"></i>Más Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/portada_2.jpg" class="d-block w-100" alt="Anime 2">
+        <div class="carousel-caption">
+          <div class="hero-content">
+            <h2 class="display-5 fw-bold">Mushoku Tensei</h2>
+            <p class="lead">Narra la historia de un hombre desempleado y solitario de 34 años que, tras ser atropellado
+              por un camión, reencarna en un mundo de fantasía como Rudeus Greyrat.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/portada-3.jpg" class="d-block w-100" alt="Anime 3">
+        <div class="carousel-caption">
+          <div class="hero-content">
+            <h2 class="display-5 fw-bold">Horimiya</h2>
+            <p class="lead">es una serie que sigue la historia de Kyouko Hori, una estudiante popular y brillante que
+              oculta su vida familiar, y Izumi Miyamura, un chico introvertido con un lado rebelde que usa tatuajes y
+              piercings. Cuando se conocen fuera de la escuela, descubren los lados ocultos del otro y forman una
+              amistad especial, compartiendo aspectos de sus vidas que nunca han mostrado a nadie más. </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/portada-4.jpg" class="d-block w-100" alt="Anime 4">
+        <div class="carousel-caption">
+          <div class="hero-content">
+            <h2 class="display-5 fw-bold">"Welcome to Japan, Ms. Elf!"</h2>
+            <p class="lead">Es una serie de anime que sigue la historia de Kazuhiro Kitase, un oficinista que, mientras
+              duerme, viaja a un mundo de fantasía donde se hace amigo de una elfa llamada Marie.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/portada-5.jpg" class="d-block w-100" alt="Anime 5">
+        <div class="carousel-caption">
+          <div class="hero-content">
+            <h2 class="display-5 fw-bold">"Kaina of the Great Snow Sea" </h2>
+            <p class="lead"> Es una serie de anime que se desarrolla en un mundo cubierto por un vasto mar de nieve,
+              donde la humanidad se divide entre los que viven en las alturas, cerca del "Cielo de Tela" sostenido por
+              árboles gigantes, y los que habitan la superficie. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- Episodios Recientes -->
+  <section class="recent-episodes py-5">
+    <div class="container">
+      <div class="section-header mb-5">
+        <h2 class="text-warning mb-3">
+          <i class="fa-solid fa-clock me-2"></i>Episodios Recientes
+        </h2>
+        <p class="lead text-light">Últimos capítulos de anime agregados a nuestro catálogo.</p>
+      </div>
+
+      <div class="row g-4" id="animeGrid">
+        <!-- Anime Card 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/episodio reciente_1.jpg" alt="Bunny Girl Senpai">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 13</div>
+                  <div class="quality-badge">HD</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">Rascal Does Not Dream of Santa Claus</h5>
+              <p class="anime-description">
+                Sigue a Sakuta Azusagawa mientras comienza la vida universitaria con Mai Sakurajima. Se enfrentan a un
+                nuevo misterio que involucra a una chica vestida de Papá Noel, Touko Kirishima, quien parece estar
+                experimentando un extraño fenómeno, posiblemente relacionado con el "Síndrome de la Pubertad" que Sakuta
+                ya había experimentado.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 9.2
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 2.1M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/foto-7.jpg" alt="Boku no Hero">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 134</div>
+                  <div class="quality-badge">4K</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">"The Fragrant Flower Blooms with Dignity"</h5>
+              <p class="anime-description">
+                Es una historia sobre la amistad y el romance entre Rintaro Tsumugi, un estudiante de la escuela
+                secundaria pública Chidori, y Kaoruko Waguri, una estudiante de la academia privada Kikyo.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 8.9
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 5.3M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/foto-3.jpg" alt="Naruto">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 220</div>
+                  <div class="quality-badge">HD</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">Horimiya</h5>
+              <p class="anime-description">
+                Es una serie que sigue la historia de Kyouko Hori, una estudiante popular y brillante que
+                oculta su vida familiar, y Izumi Miyamura, un chico introvertido con un lado rebelde que usa tatuajes y
+                piercings. Cuando se conocen fuera de la escuela, descubren los lados ocultos del otro y forman una
+                amistad especial, compartiendo aspectos de sus vidas que nunca han mostrado a nadie más.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 9.5
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 8.7M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/foto-8.jpg" alt="One Piece">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 1071</div>
+                  <div class="quality-badge">4K</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">"My Dress-Up Darling" </h5>
+              <p class="anime-description">
+                Es una serie anime que sigue la historia de Wakana Gojo, un estudiante de secundaria que sueña con
+                convertirse en un artesano de muñecas Hina.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 9.8
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 12.5M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 5 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/episodio reciente_2.jpg" alt="Attack on Titan">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 87</div>
+                  <div class="quality-badge">HD</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">"Clevatess" </h5>
+              <p class="anime-description">
+                Trata sobre un señor de las bestias oscuras, Clevatess, cuyo reinado está en declive. Para salvar un
+                mundo moribundo, revive a una heroína que él mismo mató y adopta a un bebé humanoide.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 9.7
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 15.2M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 6 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/episodio reciente_3.jpg" alt="Demon Slayer">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 44</div>
+                  <div class="quality-badge">4K</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title"> "Isekai Mokushiroku Mynoghra"</h5>
+              <p class="anime-description">
+                Gira en torno a Takuto Ira, quien, tras morir de una enfermedad, renace en el mundo de su juego
+                favorito, "Eternal Nations".
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 9.4
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 18.9M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 7 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/episodio reciente_4.jpg" alt="Jujutsu Kaisen">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 24</div>
+                  <div class="quality-badge">HD</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">Lord of the Mysteries</h5>
+              <p class="anime-description">
+                Es una novela web china que sigue a Zhou Mingrui, quien despierta en un mundo alternativo inspirado en
+                la era victoriana como Klein Moretti.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 9.1
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 11.3M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anime Card 8 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 anime-card">
+          <div class="anime-item">
+            <div class="anime-poster">
+              <img src="img/episodio reciente_5.jpg" alt="Chainsaw Man">
+              <div class="anime-overlay">
+                <div class="play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="anime-info">
+                  <div class="episode-badge">Ep. 12</div>
+                  <div class="quality-badge">4K</div>
+                </div>
+              </div>
+            </div>
+            <div class="anime-content">
+              <h5 class="anime-title">"Mizu Zokusei no Mahoutsukai"</h5>
+              <p class="anime-description">
+                Es una serie de novelas ligeras japonesas sobre un protagonista que se reencarna en un mundo de fantasía
+                y obtiene habilidades de magia acuática.
+              </p>
+              <div class="anime-meta">
+                <span class="rating">
+                  <i class="fa-solid fa-star"></i> 8.8
+                </span>
+                <span class="views">
+                  <i class="fa-solid fa-eye"></i> 7.6M
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ver Más -->
+      <div class="text-center mt-5">
+        <button class="btn btn-outline-warning btn-lg">
+          <i class="fa-solid fa-plus me-2"></i>Ver Más Animes
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section class="stats-section py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-tv stat-icon"></i>
+            <h3 class="stat-number" data-target="10000">0</h3>
+            <p>Episodios Disponibles</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-users stat-icon"></i>
+            <h3 class="stat-number" data-target="500000">0</h3>
+            <p>Usuarios Activos</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-clock stat-icon"></i>
+            <h3 class="stat-number" data-target="24">0</h3>
+            <p>Horas de Actualización</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-star stat-icon"></i>
+            <h3 class="stat-number" data-target="98">0</h3>
+            <p>% Satisfacción</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white mt-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <img src="img/logo_Mai.png" alt="Logo AnimeLife" width="60" class="mb-2">
+          <h5 class="text-warning">AnimeLife</h5>
+          <p>Tu sitio ideal para disfrutar de animes en línea, gratis y en HD. Nuevos episodios cada día.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Categorías Populares</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Acción</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Aventura</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Comedia</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Romance</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Enlaces Útiles</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Directorio</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Calendario</a></li>
+            <li><a href="#" class="text-white text-decoration-none">En Emisión</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Ingresar</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Ubicación</h5>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1753224019586!6m8!1m7!1sWqQNXTXyVue-qroN9Ye08w!2m2!1d35.74212737153465!2d139.6067255449599!3f291.13373262413637!4f12.537718789550908!5f0.7820865974627469"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <small>🌸 Gracias por unirte a la familia de Anime Life 🌸
+          En este rincón digital, donde la imaginación y el arte japonés se encuentran, cada visitante es más que un
+          espectador: es parte de una comunidad vibrante. En Kitsune celebramos cada historia, cada emoción, y cada
+          escena que nos hace soñar. Ya sea que estés buscando revivir grandes momentos o descubrir nuevas aventuras,
+          este es tu refugio, tu hogar entre mundos animados.
+          
+          
+          <br>© 2025 AnimeLife. Todos los derechos reservados. Ningún
+          video se encuentra alojado en nuestros
+          servidores.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="java.js"></script>
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>

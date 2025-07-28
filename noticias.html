@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noticias - AnimeLife</title>
+  <link rel="icon" href="img/logo_Mai.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/36dd0ead2c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="noticias.css">
+</head>
+<body class="bg-dark text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/logo_Mai.png" alt="Logo AnimeLife" width="40" height="40" class="me-2 rounded-circle">
+        <span class="text-warning">AnimeLife</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="genero.html"><i class="fa-solid fa-list me-2"></i>Géneros</a></li>
+          <li class="nav-item"><a class="nav-link" href="populares.html"><i class="fa-solid fa-fire me-2"></i>Populares</a></li>
+          <li class="nav-item"><a class="nav-link" href="peliculas.html"><i class="fa-solid fa-film me-2"></i>Películas</a></li>
+          <li class="nav-item"><a class="nav-link" href="mangas.html"><i class="fa-solid fa-book me-2"></i>Mangas</a></li>
+          <li class="nav-item"><a class="nav-link active" href="noticias.html"><i class="fa-solid fa-newspaper me-2"></i>Noticias</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar noticias..." aria-label="Buscar">
+          <button class="btn btn-outline-warning" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-noticias">
+    <div class="hero-overlay">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-4 text-gradient">
+              <i class="fa-solid fa-newspaper me-3"></i>Noticias del Anime
+            </h1>
+            <p class="lead mb-4">Mantente al día con las últimas noticias, estrenos, anuncios y eventos del mundo del anime y manga.</p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Actualizado Diario</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-globe"></i>
+                <span>Cobertura Global</span>
+              </div>
+              <div class="stat-item">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Noticias Exclusivas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Noticia Destacada -->
+  <section class="featured-news py-5">
+    <div class="container">
+      <div class="featured-card">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <div class="featured-image">
+              <img src="img/noticia_2.jpg" alt="Noticia Destacada">
+              <div class="trending-badge">
+                <i class="fa-solid fa-fire"></i>
+                <span>TRENDING</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="featured-content">
+              <div class="news-category">
+                <i class="fa-solid fa-crown"></i>
+                <span>Noticia Destacada</span>
+              </div>
+              <h2>Attack on Titan: Anunciado Nuevo Proyecto Especial para 2025</h2>
+              <div class="news-meta">
+                <span class="author"><i class="fa-solid fa-user"></i> Equipo AnimeLife</span>
+                <span class="date"><i class="fa-solid fa-calendar"></i> 15 Ene 2025</span>
+                <span class="views"><i class="fa-solid fa-eye"></i> 45.2K</span>
+                <span class="comments"><i class="fa-solid fa-comments"></i> 892</span>
+              </div>
+              <p class="excerpt">
+                Mappa Studio ha confirmado oficialmente un nuevo proyecto especial de Attack on Titan que llegará en 2025. El anuncio fue realizado durante el evento especial de Año Nuevo y promete cerrar definitivamente la historia de Eren Jaeger...
+              </p>
+              <div class="news-tags">
+                <span class="tag">Attack on Titan</span>
+                <span class="tag">Mappa</span>
+                <span class="tag">2025</span>
+              </div>
+              <div class="news-actions">
+                <button class="btn-read-more">
+                  <i class="fa-solid fa-book-open"></i> Leer Más
+                </button>
+                <button class="btn-share">
+                  <i class="fa-solid fa-share"></i> Compartir
+                </button>
+                <button class="btn-bookmark">
+                  <i class="fa-regular fa-bookmark"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="filters-section py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">
+              <i class="fa-solid fa-globe"></i> Todas
+            </button>
+            <button class="filter-btn" data-filter="breaking">
+              <i class="fa-solid fa-bolt"></i> Últimas
+            </button>
+            <button class="filter-btn" data-filter="anime">
+              <i class="fa-solid fa-tv"></i> Anime
+            </button>
+            <button class="filter-btn" data-filter="manga">
+              <i class="fa-solid fa-book"></i> Manga
+            </button>
+            <button class="filter-btn" data-filter="industry">
+              <i class="fa-solid fa-building"></i> Industria
+            </button>
+            <button class="filter-btn" data-filter="events">
+              <i class="fa-solid fa-calendar-days"></i> Eventos
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="sort-controls">
+            <select class="form-select" id="sortSelect">
+              <option value="recent">Más Reciente</option>
+              <option value="popular">Más Popular</option>
+              <option value="commented">Más Comentado</option>
+              <option value="alphabetical">A-Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de Noticias -->
+  <section class="news-grid py-5">
+    <div class="container">
+      <div class="row g-4" id="newsGrid">
+        
+        <!-- Noticia 1 -->
+        <div class="col-lg-4 col-md-6 news-item" data-category="breaking" data-date="2025-01-15" data-views="28500">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/noticias_portada_1.jpg" alt="One Piece">
+              <div class="news-overlay">
+                <div class="category-tag breaking">BREAKING</div>
+                <div class="read-time">3 min</div>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3>One Piece alcanza milestone histórico</h3>
+              <p class="news-excerpt">El manga más vendido del mundo supera los 500 millones de copias vendidas a nivel mundial...</p>
+              <div class="news-footer">
+                <div class="news-meta">
+                  <span class="date"><i class="fa-solid fa-calendar"></i> Hace 2 horas</span>
+                  <span class="views"><i class="fa-solid fa-eye"></i> 28.5K</span>
+                </div>
+                <div class="news-actions">
+                  <button class="btn-read"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                  <button class="btn-share"><i class="fa-solid fa-share"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 2 -->
+        <div class="col-lg-4 col-md-6 news-item" data-category="anime" data-date="2025-01-14" data-views="19200">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/noticias_portada_2.jpg" alt="Demon Slayer">
+              <div class="news-overlay">
+                <div class="category-tag anime">ANIME</div>
+                <div class="read-time">5 min</div>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3>Demon Slayer: Fechas del arco final</h3>
+              <p class="news-excerpt">Ufotable confirma las fechas de estreno para las películas del Castillo Infinito...</p>
+              <div class="news-footer">
+                <div class="news-meta">
+                  <span class="date"><i class="fa-solid fa-calendar"></i> Ayer</span>
+                  <span class="views"><i class="fa-solid fa-eye"></i> 19.2K</span>
+                </div>
+                <div class="news-actions">
+                  <button class="btn-read"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                  <button class="btn-share"><i class="fa-solid fa-share"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 3 -->
+        <div class="col-lg-4 col-md-6 news-item" data-category="manga" data-date="2025-01-14" data-views="15800">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/noticias_portada_3.jpg" alt="Chainsaw Man">
+              <div class="news-overlay">
+                <div class="category-tag manga">MANGA</div>
+                <div class="read-time">4 min</div>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3>Chainsaw Man: Nuevo capítulo rompe récords</h3>
+              <p class="news-excerpt">El capítulo 150 de Chainsaw Man se convierte en el más leído en la historia de Jump+...</p>
+              <div class="news-footer">
+                <div class="news-meta">
+                  <span class="date"><i class="fa-solid fa-calendar"></i> Hace 1 día</span>
+                  <span class="views"><i class="fa-solid fa-eye"></i> 15.8K</span>
+                </div>
+                <div class="news-actions">
+                  <button class="btn-read"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                  <button class="btn-share"><i class="fa-solid fa-share"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 4 -->
+        <div class="col-lg-4 col-md-6 news-item" data-category="industry" data-date="2025-01-13" data-views="12400">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/noticias_portada_4.jpg"alt="Studio Ghibli">
+              <div class="news-overlay">
+                <div class="category-tag industry">INDUSTRIA</div>
+                <div class="read-time">6 min</div>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3>Studio Ghibli anuncia nueva colaboración</h3>
+              <p class="news-excerpt">El legendario estudio se asocia con Netflix para una serie original que llegará en 2026...</p>
+              <div class="news-footer">
+                <div class="news-meta">
+                  <span class="date"><i class="fa-solid fa-calendar"></i> Hace 2 días</span>
+                  <span class="views"><i class="fa-solid fa-eye"></i> 12.4K</span>
+                </div>
+                <div class="news-actions">
+                  <button class="btn-read"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                  <button class="btn-share"><i class="fa-solid fa-share"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 5 -->
+        <div class="col-lg-4 col-md-6 news-item" data-category="events" data-date="2025-01-12" data-views="9800">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/noticias_portada_5.jpg" alt="Anime Japan">
+              <div class="news-overlay">
+                <div class="category-tag events">EVENTO</div>
+                <div class="read-time">3 min</div>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3>AnimeJapan 2025: Primeros anuncios</h3>
+              <p class="news-excerpt">La feria más importante del anime revela su lineup inicial con grandes sorpresas incluidas...</p>
+              <div class="news-footer">
+                <div class="news-meta">
+                  <span class="date"><i class="fa-solid fa-calendar"></i> Hace 3 días</span>
+                  <span class="views"><i class="fa-solid fa-eye"></i> 9.8K</span>
+                </div>
+                <div class="news-actions">
+                  <button class="btn-read"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                  <button class="btn-share"><i class="fa-solid fa-share"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia 6 -->
+        <div class="col-lg-4 col-md-6 news-item" data-category="anime" data-date="2025-01-11" data-views="18700">
+          <div class="news-card">
+            <div class="news-image">
+              <img src="img/noticias_portada_6.jpg" alt="Jujutsu Kaisen">
+              <div class="news-overlay">
+                <div class="category-tag anime">ANIME</div>
+                <div class="read-time">4 min</div>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3>Jujutsu Kaisen temporada 3 confirmada</h3>
+              <p class="news-excerpt">Mappa oficializa la tercera temporada del popular anime para finales de 2025...</p>
+              <div class="news-footer">
+                <div class="news-meta">
+                  <span class="date"><i class="fa-solid fa-calendar"></i> Hace 4 días</span>
+                  <span class="views"><i class="fa-solid fa-eye"></i> 18.7K</span>
+                </div>
+                <div class="news-actions">
+                  <button class="btn-read"><i class="fa-solid fa-arrow-right"></i></button>
+                  <button class="btn-bookmark"><i class="fa-regular fa-bookmark"></i></button>
+                  <button class="btn-share"><i class="fa-solid fa-share"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Paginación -->
+      <div class="pagination-wrapper mt-5">
+        <nav aria-label="Navegación de páginas">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">
+                <i class="fa-solid fa-chevron-left"></i>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section py-5">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h3><i class="fa-solid fa-envelope me-2"></i>¡No te pierdas ninguna noticia!</h3>
+            <p class="mb-0">Suscríbete a nuestro newsletter y recibe las últimas noticias del anime directamente en tu email.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="newsletter-form">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Tu email...">
+                <button class="btn btn-warning" type="button">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section class="stats-section py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-newspaper stat-icon"></i>
+            <h3 class="stat-number" data-target="2500">0</h3>
+            <p>Noticias Publicadas</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-users stat-icon"></i>
+            <h3 class="stat-number" data-target="150000">0</h3>
+            <p>Lectores Diarios</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-clock stat-icon"></i>
+            <h3 class="stat-number" data-target="24">0</h3>
+            <p>Horas de Cobertura</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-card">
+            <i class="fa-solid fa-globe stat-icon"></i>
+            <h3 class="stat-number" data-target="45">0</h3>
+            <p>Países Cubiertos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white mt-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <img src="img/logo_Mai.png" alt="Logo AnimeLife" width="60" class="mb-2">
+          <h5 class="text-warning">AnimeLife</h5>
+          <p>Tu sitio ideal para disfrutar de animes en línea, gratis y en HD. Nuevos episodios cada día.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Categorías Populares</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Acción</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Aventura</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Comedia</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Romance</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Enlaces Útiles</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Directorio</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Calendario</a></li>
+            <li><a href="#" class="text-white text-decoration-none">En Emisión</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Ingresar</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="text-warning">Ubicación</h5>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <iframe src="https://www.google.com/maps/embed?pb=!4v1753224019586!6m8!1m7!1sWqQNXTXyVue-qroN9Ye08w!2m2!1d35.74212737153465!2d139.6067255449599!3f291.13373262413637!4f12.537718789550908!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <small>🌸 Gracias por unirte a la familia de Anime Life 🌸
+          En este rincón digital, donde la imaginación y el arte japonés se encuentran, cada visitante es más que un
+          espectador: es parte de una comunidad vibrante. En Kitsune celebramos cada historia, cada emoción, y cada
+          escena que nos hace soñar. Ya sea que estés buscando revivir grandes momentos o descubrir nuevas aventuras,
+          este es tu refugio, tu hogar entre mundos animados.
+          
+          
+          <br>© 2025 AnimeLife. Todos los derechos reservados. Ningún
+          video se encuentra alojado en nuestros
+          servidores.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
